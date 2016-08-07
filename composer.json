@@ -1,7 +1,7 @@
 {
-    "name": "hos/plugin-twig-framework",
-    "description": "Twig Plugin Framework for Fast Developpement for PHP",
-    "keywords": [ "daehl", "hos", "framework", "twig" ],
+    "name": "hos/plugin-tal",
+    "description": "TAL Plugin Framework for Fast Developpement for PHP",
+    "keywords": [ "daehl", "hos", "framework", "tal" ],
     "homepage": "https://github.com/daehl/hos-framework",
     "type": "library",
     "license": "CC0 1.0",
@@ -14,14 +14,19 @@
     ],
     "autoload": {
         "psr-4":{
-            "Hos\\": "src/"
+            "Hos\\Plugin\\Tal\\": "src/"
         }
     },
     "require": {
-         "twig/twig": "v1.13.0"
+         "phptal/phptal": "1.3.0"
     },
-    "config": {
-        "global": {}
-    }
+		"config": {
+			"global": []
+		},
+		"events": {
+			"generate": {
+					"html": ["Hos\\Plugin\\Tal\\Events::generate"]
+			}
+		}
 
 }
